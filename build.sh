@@ -1,5 +1,4 @@
 #!/bin/sh
-export PATH="/usr/local/texlive/bin/x86_64-linuxmusl:$PATH";
 if ! command -v tlmgr > /dev/null; then
     if [[ -z "$CTAN_MIRROR" ]]; then
        REMOTE="http://mirror.ctan.org/systems/texlive/tlnet";
