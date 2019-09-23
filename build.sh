@@ -8,6 +8,7 @@ if ! command -v tlmgr > /dev/null; then
     fi
     INSTALL="/tmp/install-texlive";
     mkdir -p $INSTALL;
+    echo $REMOTE
     curl -sSL $REMOTE/install-tl-unx.tar.gz | tar -xzv -C $INSTALL \
         --strip-components=1;
     echo "selected_scheme scheme-basic" >> $INSTALL/tl.profile;
@@ -21,7 +22,8 @@ if ! command -v tlmgr > /dev/null; then
     echo "tlpdbopt_autobackup 0" >> $INSTALL/tl.profile;
     echo "tlpdbopt_install_docfiles 0" >> $INSTALL/tl.profile;
     echo "tlpdbopt_install_srcfiles 0" >> $INSTALL/tl.profile;
-    $INSTALL/install-tl -repository $REMOTE -profile $INSTALL/tl.profile;        
+    $INSTALL/install-tl -repository $REMOTE -profile $INSTALL/tl.profile;
+    ls /usr/local/bin/texlive/x86_64-linuxmusl        
     tlmgr install wrapfig etoolbox translator caption mathtools algorithms float footmisc;          
 fi
 
