@@ -1,5 +1,5 @@
 #!/bin/sh
-export PATH="/usr/local/bin/texlive/x86_64-linuxmusl:$PATH";
+export PATH="/usr/local/bin/texlive/bin/x86_64-linuxmusl:$PATH";
 if ! command -v tlmgr > /dev/null; then
     if [[ -z "$CTAN_MIRROR" ]]; then
        REMOTE="http://mirror.ctan.org/systems/texlive/tlnet";
@@ -23,7 +23,6 @@ if ! command -v tlmgr > /dev/null; then
     echo "tlpdbopt_install_docfiles 0" >> $INSTALL/tl.profile;
     echo "tlpdbopt_install_srcfiles 0" >> $INSTALL/tl.profile;
     $INSTALL/install-tl -repository $REMOTE -profile $INSTALL/tl.profile;
-    ls /usr/local/bin/texlive/x86_64-linuxmusl        
     tlmgr install wrapfig etoolbox translator caption mathtools algorithms float footmisc;          
 fi
 
