@@ -1,7 +1,11 @@
 #!/bin/sh
-export PATH="/usr/local/bin/x86_64-linux:$PATH";
+export PATH="/usr/local/bin/x86_64-linuxmusl:$PATH";
 if ! command -v tlmgr > /dev/null; then
-    REMOTE="http://mirror.ctan.org/systems/texlive/tlnet";
+    if [[ -z "$CTAN_MIRROR" ]]; then
+       REMOTE="http://mirror.ctan.org/systems/texlive/tlnet";
+    else
+       REMOTE="$CTAN_MIRROR/systems/texlive/tlnet"
+    fi
     INSTALL="/tmp/install-texlive";
     mkdir -p $INSTALL;
     curl -sSL $REMOTE/install-tl-unx.tar.gz | tar -xzv -C $INSTALL \
