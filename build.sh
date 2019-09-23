@@ -1,5 +1,5 @@
 #!/bin/sh
-export PATH="/usr/local/bin/texlive/bin/x86_64-linuxmusl:$PATH";
+export PATH="/usr/local/texlive/bin/x86_64-linuxmusl:$PATH";
 if ! command -v tlmgr > /dev/null; then
     if [[ -z "$CTAN_MIRROR" ]]; then
        REMOTE="http://mirror.ctan.org/systems/texlive/tlnet";
@@ -15,10 +15,10 @@ if ! command -v tlmgr > /dev/null; then
     echo "collection-fontsrecommended 1" >> $INSTALL/tl.profile;
     echo "collection-latex 1" >> $INSTALL/tl.profile;
     echo "collection-xetex 1" >> $INSTALL/tl.profile;
-    echo "TEXDIR /usr/local/bin/texlive" >> $INSTALL/tl.profile;
-    echo "TEXMFLOCAL /usr/local/bin/texlive/texmf-local" >> $INSTALL/tl.profile;
-    echo "TEXMFSYSCONFIG /usr/local/bin/texlive/texmf-config" >> $INSTALL/tl.profile;
-    echo "TEXMFSYSVAR /usr/local/bin/texlive/texmf-var" >> $INSTALL/tl.profile;
+    echo "TEXDIR /usr/local/texlive" >> $INSTALL/tl.profile;
+    echo "TEXMFLOCAL /usr/local/texlive/texmf-local" >> $INSTALL/tl.profile;
+    echo "TEXMFSYSCONFIG /usr/local/texlive/texmf-config" >> $INSTALL/tl.profile;
+    echo "TEXMFSYSVAR /usr/local/texlive/texmf-var" >> $INSTALL/tl.profile;
     echo "tlpdbopt_autobackup 0" >> $INSTALL/tl.profile;
     echo "tlpdbopt_install_docfiles 0" >> $INSTALL/tl.profile;
     echo "tlpdbopt_install_srcfiles 0" >> $INSTALL/tl.profile;
