@@ -22,6 +22,6 @@ if ! command -v tlmgr > /dev/null; then
     echo "tlpdbopt_install_docfiles 0" >> $INSTALL/tl.profile;
     echo "tlpdbopt_install_srcfiles 0" >> $INSTALL/tl.profile;
     $INSTALL/install-tl -repository $REMOTE -profile $INSTALL/tl.profile;
-    tlmgr install wrapfig etoolbox translator caption mathtools algorithms float footmisc;          
+    tlmgr install listings IEEEtran wrapfig etoolbox translator caption mathtools algorithms float footmisc;          
 fi
 
