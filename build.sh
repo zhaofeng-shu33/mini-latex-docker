@@ -25,5 +25,5 @@ echo "tlpdbopt_autobackup 0" >> $INSTALL/tl.profile;
 echo "tlpdbopt_install_docfiles 0" >> $INSTALL/tl.profile;
 echo "tlpdbopt_install_srcfiles 0" >> $INSTALL/tl.profile;
 $INSTALL/install-tl -repository $REMOTE -profile $INSTALL/tl.profile;
-tlmgr install listings IEEEtran wrapfig etoolbox translator caption mathtools algorithms float footmisc cite pdfescape elsarticle algorithmicx bbm-macros bbm;
+tlmgr install listings IEEEtran wrapfig etoolbox translator caption mathtools algorithms float footmisc cite pdfescape elsarticle algorithmicx bbm-macros bbm dehyph-exptl;
 
